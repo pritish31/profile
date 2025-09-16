@@ -217,3 +217,159 @@ body {
 .links a:hover {
     text-decoration: underline;
 }
+
+/* --- Projects page layout --- */
+.proj-wrap{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+.proj-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:18px;
+}
+.proj-header h1{
+  margin:0;
+  font-size:28px;
+}
+
+/* Filters */
+.proj-filters{ display:flex; flex-wrap:wrap; gap:10px; }
+.pf-btn{
+  appearance:none;
+  border:1px solid #e2e5ea;
+  background:#fff;
+  color:#111827;
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s ease;
+}
+.pf-btn:hover{ transform:translateY(-1px); }
+.pf-btn.active{
+  background:#5b7cfa;
+  border-color:#5b7cfa;
+  color:#fff;
+}
+
+/* Grid */
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:22px;
+}
+.proj-card{
+  grid-column:span 12;
+  border:1px solid #e6e8ef;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  display:flex;
+  flex-direction:column;
+}
+@media (min-width:700px){ .proj-card{ grid-column:span 6 } }
+@media (min-width:1024px){ .proj-card{ grid-column:span 4 } }
+
+/* Card */
+.pc-media{
+  aspect-ratio:16/9;
+  background:#f5f7fb;
+  overflow:hidden;
+  border-bottom:1px solid #eef0f5;
+}
+.pc-media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.pc-body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px; }
+.pc-title-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.pc-title-row h3{ margin:0; font-size:18px; }
+.pc-badge{
+  font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+  padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3646c5; border:1px solid #dfe5ff;
+}
+.pc-desc{ color:#4b5563; margin:0; text-align: justify; font-size: 14px;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; }
+.pc-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.pc-chip{
+  font-size:12px; color:#374151; background:#f3f4f6; border:1px solid #e5e7eb;
+  border-radius:999px; padding:6px 10px;
+}
+.pc-actions{ display:flex; gap:10px; margin-top:6px; }
+.pc-btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  border:1px solid #d1d5db; background:#fff; color:#111827;
+  padding:5px 8px; border-radius:12px; font-weight:200; transition:.2s;
+}
+.pc-btn:hover{ transform:translateY(-1px); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+
+/* Optional: highlight active link in your navbar */
+.navbar-links a.active{ color:#5b7cfa; font-weight:700; }
+
+
+/* Blogs layout */
+/* --- Text-list blog view (no cards/images) --- */
+.bloglist-wrap{ max-width:900px; margin:40px auto; padding:0 20px; }
+.bloglist-head h1{ margin:0 0 6px; }
+.bloglist-head .muted{ color:#6b7280; margin:0 0 18px; }
+
+.bloglist{ display:flex; flex-direction:column; gap:22px; }
+
+/* Each item looks like a tidy article snippet */
+.bl-item{
+  border:1px solid #e6e8ef;
+  border-left:4px solid #5b7cfa;
+  background:#fff;
+  border-radius:10px;
+  padding:14px 16px 16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+}
+.bl-meta{ display:flex; align-items:center; gap:8px; color:#6b7280; font-size:13px; }
+.bl-dot{ width:6px; height:6px; background:#5b7cfa; border-radius:50%; display:inline-block; }
+.bl-title{ margin:6px 0 8px; font-size:20px; line-height:1.3; }
+.bl-preview{
+  margin:0 0 10px;
+  color:#374151;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.bl-actions{ display:flex; gap:10px; }
+.bl-btn{
+  border:1px solid #d1d5db; background:#fff; color:#111827;
+  padding:9px 12px; border-radius:10px; font-weight:600; cursor:pointer; transition:.2s;
+}
+.bl-btn:hover{ transform:translateY(-1px); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+
+.bl-link{
+  color:#2563eb;
+  font-weight:600;
+  text-decoration:none;
+  padding:0; border:0; background:none;
+}
+.bl-link:hover{ text-decoration:underline; }
+
+/* PDF modal (same as before, styled for text view) */
+.pdf-modal{
+  position:fixed; inset:0; background:rgba(0,0,0,.6);
+  display:flex; align-items:center; justify-content:center; padding:24px;
+  opacity:0; pointer-events:none; transition:.2s;
+}
+.pdf-modal[aria-hidden="false"]{ opacity:1; pointer-events:auto; }
+.pdf-dialog{
+  width:min(1100px,100%); height:min(90vh,100%); background:#fff;
+  border-radius:14px; overflow:hidden; position:relative; display:flex; flex-direction:column;
+}
+.pdf-close{
+  position:absolute; top:10px; right:10px; z-index:2;
+  background:#111827; color:#fff; border:0; border-radius:10px; padding:8px 10px; cursor:pointer;
+}
+.pdf-frame{ width:100%; height:100%; border:0; }
+.pdf-actions{
+  position:absolute; bottom:10px; right:10px; display:flex; gap:10px; background:#ffffffdd;
+  padding:6px 10px; border-radius:10px; border:1px solid #e5e7eb;
+}
+.pdf-actions a{ text-decoration:none; font-weight:600; color:#1f2937; }

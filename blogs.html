@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Blogs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0f172a; --muted:#64748b; --accent:#2563eb;
+      --line:#e5e7eb; --card:#fff; --bg:#f8fafc;
+    }
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+    }
+    .wrap{max-width:900px; margin:40px auto; padding:0 20px}
+    h1{margin:0 0 6px;font-size: 28px;}
+    .lead{color:var(--muted); margin:0 0 18px}
+
+    /* List */
+    .posts{list-style:none; margin:0; padding:0}
+    .post{padding:14px 0 16px; border-bottom:1px solid var(--line)}
+    .post-title{margin:0 0 6px; font-size:20px; line-height:1.3}
+    .post-meta{color:var(--muted); font-size:13px; margin-bottom:8px}
+    .post-preview{
+      margin:0 0 10px; color:#374151;
+      display:-webkit-box;  -webkit-box-orient:vertical; overflow:hidden;
+    }
+    .readmore{
+      color:var(--accent); text-decoration:none; font-weight:600;
+    }
+    .readmore:hover{ text-decoration:underline }
+
+    /* Modal PDF viewer */
+    .pdf-modal{
+      position:fixed; inset:0; background:rgba(0,0,0,.6);
+      display:flex; align-items:center; justify-content:center; padding:24px;
+      opacity:0; pointer-events:none; transition:.2s;
+    }
+    .pdf-modal[aria-hidden="false"]{ opacity:1; pointer-events:auto }
+    .pdf-dialog{
+      width:min(1100px,100%); height:min(90vh,100%); background:var(--card);
+      border-radius:14px; overflow:hidden; position:relative; display:flex; flex-direction:column;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+    }
+    .pdf-close{
+      position:absolute; top:10px; right:10px; z-index:2;
+      background:#111827; color:#fff; border:0; border-radius:10px; padding:8px 10px; cursor:pointer;
+    }
+    .pdf-frame{ width:100%; height:100%; border:0; background:#111 }
+    .pdf-actions{
+      position:absolute; bottom:10px; right:10px; display:flex; gap:10px; background:#ffffffdd;
+      padding:6px 10px; border-radius:10px; border:1px solid var(--line)
+    }
+    .pdf-actions a{ text-decoration:none; font-weight:600; color:#111827 }
+
+    .blog-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .blog-subtitle {
+      font-family: 'Merriweather', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      margin: 0 auto 20px;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar-brand">Pritish Kamble</h1>
+            <nav>
+                <ul class="navbar-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://scholar.google.com/citations?hl=en&user=8j9EoxIAAAAJ">Research</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <main class="wrap">
+    <header>
+      <!-- <h1>Data Science in the Real World </h1> -->
+       <h1 class="blog-heading">Data Science in the Real World </h1>
+       <p class="blog-subtitle">
+     Welcome to a blog series straight from my personal learning journey!<br/>
+    These articles are written in a Q&A format, covering how data science is applied across industries
+    like BPO, finance, and manufacturing. Each post is inspired by thought-provoking lectures and talks
+    I’ve attended by real-world data scientists and domain experts.<br/>
+    If you’re curious about how data turns into action in different sectors—this space is for you!</p>
+    </header>
+
+    <ul id="posts" class="posts"></ul>
+  </main>
+
+  <!-- Modal PDF viewer -->
+  <div id="pdfModal" class="pdf-modal" aria-hidden="true">
+    <div class="pdf-dialog" role="dialog" aria-modal="true" aria-label="PDF viewer">
+      <button class="pdf-close" id="pdfClose" aria-label="Close">✕</button>
+      <iframe id="pdfFrame" class="pdf-frame" title="PDF Viewer"></iframe>
+      <nav class="pdf-actions">
+        <a id="openNew" target="_blank" rel="noopener">Open in new tab</a>
+        <a id="dlLink" download>Download</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    // 1) Your articles: title, 2–3 sentence preview, PDF path, optional date
+    const posts = [
+      { title: "Data Analytics for Business Process Services",
+        preview:  "The article discusses Data Analytics for Business Process Services and how it has evolved the Business Process Services (BPS) sector from cost optimization to a data-driven strategic domain. It explores data-driven decision-making across BPS and the public sector, showcasing the integration of data and computing methods into business processes.",
+        file: "blog_pdfs/1.pdf" },
+        
+      { title: "Computational Advertising",
+        preview: "In an era where the digital landscape has become the canvas for modern marketing, Computational Advertising emerges as the linchpin of online advertising's evolution. This report delves into the multifaceted domain of Computational Advertising, a dynamic sub-space within the digital marketing and advertising industry. Our journey begins by unravelling the intricate web of data science, technology, and strategy that drives this sector's success. We will explore the roles of key industry players, the challenges they face, and the intriguing opportunities they seize in their quest to engage billions of potential customers in the vast online marketplace.",
+        file: "blog_pdfs/2.pdf"},
+
+      { title: "Industrial Data Science",
+        preview: "This report delves into the relationship between data science and industrial engineering, exploring how modern analytical techniques are transforming traditional industrial practices. The focus is on the market sector of Industrial Data Science and its applications in asset management, predictive maintenance, and real-time monitoring. The report also touches upon the relevant skills and technologies that are integral to this domain, typical workflows that leverage data and computing, and the unique challenges that professionals may encounter.",
+        file: "blog_pdfs/3.pdf" },
+
+      { title: "Law, Ethics, and Privacy issues in Data Science",
+        preview: "In an era marked by the unprecedented evolution of data science, the intertwining realms of ethics, law, and privacy have gained paramount importance, inviting profound exploration and discourse. This report ventures into these critical dimensions, meticulously examining the ethical quandaries, legal frameworks, and privacy considerations intrinsic to data science, and proposing robust safeguards and ethical practices to navigate the multifarious challenges therein.",
+        file: "blog_pdfs/4.pdf" },
+
+      { title: "Data Science in e-commerce (Search)",
+        preview: "In today's digital age, e-commerce platforms have transformed the way we shop, offering unparalleled convenience, variety, and accessibility. At the heart of this transformation lies the power of data science, which plays a pivotal role in enhancing user experiences, optimizing search functionalities, and driving business strategies. Among the giants in the e-commerce sector, eBay stands out not only for its vast marketplace but also for its innovative use of data science, especially in search optimization.",
+        file: "blog_pdfs/5.pdf" },
+
+      { title: "Enterprise Search",
+        preview: "Web search engines have revolutionized the way we access information, becoming an indispensable tool in our daily lives. At the heart of this revolution lies a meticulously designed architecture that efficiently processes vast amounts of data to deliver relevant results in mere milli seconds. From the unassuming search bar we interact with, to the colossal databases storing petabytes of information, every component of a search engine is the result of years of research and optimization.",
+        file: "blog_pdfs/6.pdf" },
+
+      { title: "Data Science In Retail",
+        preview: "The retail sector, a cornerstone of global commerce, has undergone a transformative evolution with the infusion of technology. As consumer behavior shifts and digital integration becomes paramount, the realm of retail technology emerges as a dynamic and expansive landscape. This domain isn't defined by a single technological application; rather, it's a confluence of various innovations working in tandem to revolutionize the shopping experience.",
+        file: "blog_pdfs/7.pdf" },
+
+      { title: "Data Science in the Financial Sector",
+        preview: "With the rise of capabilities in the field of Data science and modeling its use has popularized in many domains and fields. One such domain is the banking sector where Data science and modeling play a vital role in commercial banking for Treasury division. Using these tools we can go deeper to answer questions regarding risks, opportunities and make informed decisions about making better use of a bank's financial resources.",
+        file: "blog_pdfs/8.pdf" },
+
+      { title: "Electronic Design Automation (EDA) Industry",
+        preview: "The article is centred on the convergence of Machine Learning (ML) and Electronic Design Automation (EDA), an industry that combines data analytics, computer science, and electrical engineering. From printed circuit boards to integrated circuits and other semiconductor devices, this industry is devoted to the design and manufacture of complex electronic systems.",
+        file: "blog_pdfs/9.pdf" },
+
+      { title: "Data Science in the Manufacturing Sector",
+        preview: "This report encapsulates the synergies between data science and advanced manufacturing within aerospace, defense, and industrial sectors, as unveiled in a lecture by Andrew Loeb and George Baggs. It synthesizes the key points presented in the lecture, illuminating how machine learning and design of experiments catalyze efficiency and innovation.",
+        file: "blog_pdfs/10.pdf" }
+
+      // ...add the rest of your PDFs here
+    ];
+
+    // 2) Render the simple list
+    const list = document.getElementById('posts');
+    list.innerHTML = posts.map(p => `
+      <li class="post">
+        <h3 class="post-title">${p.title}</h3>
+        <div class="post-meta">${p.date ? `<time>${p.date}</time>` : ""}</div>
+        <p class="post-preview">${p.preview || ""}</p>
+        <a class="readmore" href="${p.file}" data-file="${p.file}">Read more →</a>
+      </li>
+    `).join('');
+
+    // 3) Modal logic (opens PDF without leaving the page)
+    const modal   = document.getElementById('pdfModal');
+    const frame   = document.getElementById('pdfFrame');
+    const closeBt = document.getElementById('pdfClose');
+    const openNew = document.getElementById('openNew');
+    const dlLink  = document.getElementById('dlLink');
+
+    list.addEventListener('click', e => {
+      const link = e.target.closest('a.readmore[data-file]');
+      if (!link) return;
+
+      // Respect user intent for new tab/window
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+
+      e.preventDefault();
+      const src = link.dataset.file;
+      frame.src   = src;      // uses browser's native PDF viewer
+      openNew.href = src;
+      dlLink.href  = src;
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+
+    function closeModal(){
+      modal.setAttribute('aria-hidden','true');
+      frame.src='';
+      document.body.style.overflow='';
+    }
+    closeBt.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

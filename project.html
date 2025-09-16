@@ -17,129 +17,292 @@
                     <li><a href="https://scholar.google.com/citations?hl=en&user=8j9EoxIAAAAJ">Research</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="awards.html">Awards</a></li>
-                    <li><a href="#home">Blogs</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-<div class="containerProject">
-        <h1>Projects</h1>
+<!-- Projects Page -->
+  <main class="proj-wrap">
+    <div class="proj-header">
+      <h1>Projects</h1>
+      <div class="proj-filters" id="projFilters">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="ai">AI & ML</button>
+        <button class="pf-btn" data-filter="cv">Computer Vision</button>
+        <button class="pf-btn" data-filter="db">Database</button>
+      </div>
+    </div>
 
-         <!-- Publication Item 5 -->
-        <div class="project">
-            <div class="image">
-                <img src="img/project5_emotion.png" alt="Publication 1 Image">
-            </div>
-            <div class="details">
-                <h2>Facial Emotion Recognition using Deep Learning</h2>
-                <p>
-                    Developed a Facial Emotion Recognition (FER) system on the FER-2013 dataset to 
-                    classify emotions, addressing challenges of low resolution and noisy facial 
-                    images. Applied advanced preprocessing techniques such as histogram equalization, 
-                    edge detection, and unsharp masking to enhance input quality. Trained and optimized 
-                    Convolutional Neural Network (CNN) models and fine-tuned pretrained architectures to 
-                    achieve improved classification accuracy. Conducted experiments with stacked image 
-                    inputs (original + filtered) to capture richer facial features. Built a real-time 
-                    emotion detection pipeline using OpenCV, enabling live webcam-based recognition of 
-                    facial expressions.
-                </p>
-                <p class="links">
-                    <a href="https://github.com/pritish31/Facial-Emotion-Recognition-using-Deep-Learning">Github Link</a>
-                </p>
-            </div>
+    <section class="proj-grid" id="projGrid">
+      <!-- Card 1 — Bank Customer Churn Prediction Analysis -->
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/project1_ANN.png" alt="Bank Churn Project" />
         </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Bank Customer Churn Prediction Analysis using Deep Learning</h3>
+            <!--<span class="pc-badge">Featured</span> -->
+          </div>
+          <p class="pc-desc">
+            The Bank Customer Churn Prediction project aims to identify customers likely to leave the bank, enabling proactive retention strategies. 
+            An Artificial Neural Network model was implemented using a Sequential neural network 
+            with two hidden layers to classify customers as "churning" or "non-churning.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip">Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">Scikit-Learn</span>
+            <span class="pc-chip">Neural Networks</span>
+            <span class="pc-chip">TensorFlow/Keras</span>
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/ANN-for-customer-churn" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- Publication Item 4 -->
-        <div class="project">
-            <!-- <div class="image">
-                <img src="img/project2_price.png" alt="Publication 1 Image">
-            </div> -->
-            <div class="video">
-                <!--<img src="img/finger.jpg" alt="Publication 2 Image">-->
+      <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 5 — HR Data Analytics: Dashboard -->
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/proj_HR_dash.png" width=10 height=10/>
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Human Resource Data Analysis using PowerBI Dashboard</h3>
+          </div>
+          <p class="pc-desc">
+            This project aims to build PowerBI dashboard to visualize the Human Resource data. This will help the clients and key stakeholders to 
+            get quick insights and real time access to the information about the total employees, Next retrenchment, active workers and insights about employee data.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">PowerBI</span>
+            <span class="pc-chip">Exploratory Data Analysis</span>
+            <span class="pc-chip">Data Preprocessing</span>
+            <span class="pc-chip">Advance query</span>
+           
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/HumanResource_PowerBI/tree/main" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+     <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 3 — Real Time Monitoring of Parking Spots using Computer Vision -->
+      <article class="proj-card" data-category="cv">
+        <div class="pc-media">
+          <img src="img/proj_parking.png" alt="Portfolio Site" />
+        </div>
+        <!--<div class="video">
                 <video autoplay muted loop width="300" controls>
-                    <source src="img/project4_parking.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="details">
-                <h2>Real Time Monitoring of Parking Spots using Computer Vision</h2>
-                <p>
-                    A real-time parking occupancy detection system built with OpenCV and Machine Learning. 
-                    The project processes parking lot surveillance video, detects whether each parking spot is 
-                    occupied or vacant, and overlays results directly on the live video feed. Extracted individual parking 
-                    spots from video frames, build custom dataset of 2K+ cropped images, manually labeled as occupied or vacant.
-                    Implemented a Support Vector Machine (SVM) classifier for binary classification (occupied vs available). 
-                    Applied GridSearchCV for hyperparameter tuning (kernel, C, gamma) to maximize performance. 
-                    Achieved 90%+ prediction accuracy on test samples.
-                </p>
-                <p class="links">
-                    <a href="https://github.com/pritish31/Real-Time-Monitoring-of-Parking-Spots-using-Computer-Vision">Github Link</a>
-                </p>
-            </div>
+                    <source src="img/proj_parking_video.mp4" type="video/mp4">
+                </video>-->
         </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Real Time Monitoring of Parking Spots using Computer Vision</h3>
+          </div>
+          <p class="pc-desc">
+            A real-time parking occupancy detection system built with OpenCV and Machine Learning (SVM). The project processes parking lot surveillance video, 
+            detects whether each parking spot is occupied or vacant, and overlays results directly on the live video feed.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip"> OpenCV</span>
+            <span class="pc-chip">scikit-learn</span>
+            <span class="pc-chip">NumPy</span>
+            <span class="pc-chip">Matplotlib</span>
+            <span class="pc-chip">Support Vector Machine (SVM)</span>
+            <span class="pc-chip">GridSearchCV</span>
+            <span class="pc-chip">Graph:Connected components</span>
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Real-Time-Monitoring-of-Parking-Spots-using-Computer-Vision" target="_blank" rel="noopener">Github</a>
+          </div>
+        </div>
+      </article>
 
-        <!-- Publication Item 1 -->
-        <div class="project">
-            <div class="image">
-                <img src="img/project2_price.png" alt="Publication 1 Image">
-            </div>
-            <div class="details">
-                <h2>Bangalore Home Price Prediction</h2>
-                <p>
-                     This project predicts property prices in Bangalore using
+             <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 2 — Telecom Customer Churn Analysis -->
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/project_Telecom.png" style="width:250px; height:200px;margin-left: 60px;"/>
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Telecom Customer Churn Analysis</h3>
+            <!--<span class="pc-badge">Research</span>-->
+          </div>
+          <p class="pc-desc">
+           Customer churn is a critical business problem in the telecommunications sector. This project aims to analyze customer behavior, identify patterns, and 
+           build predictive models to identify the customers who likely to churn.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip">Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">Scikit-Learn</span>
+            <span class="pc-chip">MatplotLib</span>
+            <span class="pc-chip">XGBoost</span>
+            <span class="pc-chip">SVM</span>
+            <span class="pc-chip">Random Forest</span>
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Telecom-Customer-Churn-Analysis" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 4 — Bangalore Home Price Prediction -->
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/project2_price.png" alt="Retail Analytics" />
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Bangalore Home Price Prediction</h3>
+          </div>
+          <p class="pc-desc">
+           This project predicts property prices in Bangalore using
                     various features like location, total area (in square feet), number of bedrooms,
                     bathrooms, etc. The solution involves data preprocessing, feature engineering,
                     and training machine learning models, with a Flask-based API for serving predictions.
-                    The dataset contains information about various properties in Bangalore, including: Location Size (e.g., "2 BHK," "4 Bedroom") Total Square Feet Price (in Lakhs) Number of Bathrooms
-                    The raw dataset was preprocessed to handle missing values, outliers, and categorical encoding.
-                    Achieved a score of 84.9% on training data using Linear Regression. Cross-validation results indicate consistent performance across multiple folds.
-                </p>
-                <p class="links">
-                    <a href="https://github.com/pritish31/Bangalore-House-Price-Prediction">Github Link</a>
-                </p>
-            </div>
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip"> Numpy</span>
+            <span class="pc-chip">Data preprocessing</span>
+            <span class="pc-chip">Linear Regression</span>
+            <span class="pc-chip">Feature Engineering</span>
+            <span class="pc-chip">Cross Validation</span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Bangalore-House-Price-Prediction" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
+      </article>
 
-
-        <!-- Publication Item 2 -->
-        <div class="project">
-            <div class="image">
-                <img src="img/project_Telecom.png" alt="Publication 2 Image">
-            </div>
-            <div class="details">
-                <h2>Telecom Customer Churn Analysis</h2>
-                <p>
-                 Customer churn is a critical business problem in the telecommunications sector. This project aims to analyze customer behavior, identify patterns, and build predictive models to reduce churn.
-                    % Senior Citizens - There are only 16% of the customers who are senior citizens. Thus most of our customers in the data are younger people. Partner and dependent status - About 50% of the customers have a partner, while only 30% of the total customers have dependents. I also looked at any differences between the % of customers with/without dependents and partners by gender. There is no difference in their distribution by gender.
-                    Additionally, there is no difference in senior citizen status by gender.
-                </p>
-                <p class="links">
-                    <a href="https://github.com/pritish31/Telecom-Customer-Churn-Analysis">Github Link</a>
-                </p>
-            </div>
+      <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 5 — Facial Emotion Recognition using Deep Learning -->
+      <article class="proj-card" data-category="cv">
+        <div class="pc-media">
+          <img src="img/project5_emotion.png" style="width:250px; height:200px;margin-left: 60px;"/>
         </div>
-
-        <!-- Publication Item 3 -->
-        <div class="project">
-            <div class="image">
-                <img src="img/project1_ANN.png" alt="Publication 1 Image">
-            </div>
-            <div class="details">
-                <h2>Artificial Neural Network: Bank Customer Churn Prediction Analysis using Deep Learning</h2>
-                <p>
-                  The Bank Customer Churn Prediction project aims to identify customers likely to leave the bank, enabling proactive retention strategies. The dataset includes features such as customer demographics,
-                    credit score, account balance, and tenure with the bank. An Artificial Neural Network model was implemented using a Sequential neural network with two hidden layers to classify customers as "churning" or "non-churning.
-                     The model's architecture leveraged activation functions like ReLU for hidden layers and Sigmoid for the output to predict probabilities. The dataset was preprocessed through normalization, handling missing values, and encoding categorical variables (e.g., gender, geography). A train-test split ensured robust model evaluation,
-                    and performance was measured using metrics like accuracy, precision, recall, and the F1-score."
-                </p>
-                <p class="links">
-                    <a href="https://github.com/pritish31/ANN-for-customer-churn">Github Link</a>
-                </p>
-
-            </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Facial Emotion Recognition using Deep Learning</h3>
+          </div>
+          <p class="pc-desc">
+            Developed a Facial Emotion Recognition (FER) system on the FER-2013 dataset to classify emotions, addressing challenges of low resolution and noisy facial images.
+            Trained and optimized Convolutional Neural Network (CNN) models and fine-tuned pretrained architectures to achieve improved classification accuracy.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip"> Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">TensorFlow</span>
+            <span class="pc-chip">Keras</span>
+            <span class="pc-chip">Image PreProcessing</span>
+            <span class="pc-chip">CNN</span>
+            <span class="pc-chip">Deep Learning </span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Facial-Emotion-Recognition-using-Deep-Learning" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
+      </article>
 
+      <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 6 — Crime in the city -->
+      <article class="proj-card" data-category="db">
+        <div class="pc-media">
+          <img src="img/proj_crime.png" />
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Buffalo City Crime Analysis</h3>
+          </div>
+          <p class="pc-desc">
+            This project contains a database of crimes in Buffalo, NY, spanning from 2020 to 2021. The goal is to enable detailed analysis of crime patterns in the city, allowing 
+            law enforcement agencies and other stakeholders to use a web-based system for accessing and analyzing crime data.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">SQL</span>
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip">MySQL Workbench</span>
+            <span class="pc-chip">Streamlit</span>
+            <span class="pc-chip">Data preprocessing</span>
+            <span class="pc-chip">Window Funtions</span>
+            <span class="pc-chip">Complex queries</span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Crime_in_the_city" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
 
-    </div>
+      <!--------------------------------------------------------------------------------------------------------->
+      <!-- Card 5 — HR Data Analytics: Employee Attrition Prediction -->
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/proj_HR_analytics.png" width=10 height=10/>
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Human Resource Data Analytics: Employee Attrition Prediction</h3>
+          </div>
+          <p class="pc-desc">
+            Employee attrition poses significant challenges to organizations, including high costs of rehiring and training, loss of institutional knowledge, 
+            and reduced productivity. This project leverages data analytics and machine learning to explore the key factors contributing to 
+            employee attrition and provides actionable insights for improving retention strategies.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip"> Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">Exploratory Data Analysis</span>
+            <span class="pc-chip">Data Preprocessing</span>
+            <span class="pc-chip">Scikit-learn</span>
+            <span class="pc-chip">MatplotLib</span>
+            <span class="pc-chip">Logistic Regression</span>
+            <span class="pc-chip">XGBoost</span>
+            <span class="pc-chip">SVM</span>
+            <span class="pc-chip">Random Forest</span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Human-Resource-Analytics" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    const filterBtns = document.querySelectorAll('.pf-btn');
+    const cards = document.querySelectorAll('.proj-card');
+
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c=>{
+          const cat = c.dataset.category;
+          c.style.display = (f==='all' || f===cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
