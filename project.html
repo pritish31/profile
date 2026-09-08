@@ -29,17 +29,16 @@
       <h1>Projects</h1>
       <div class="proj-filters" id="projFilters">
         <button class="pf-btn active" data-filter="all">All</button>
-        <button class="pf-btn" data-filter="ai">AI & ML</button>
         <button class="pf-btn" data-filter="cv">Computer Vision</button>
-        <button class="pf-btn" data-filter="db">Database</button>
+        <button class="pf-btn" data-filter="ai">AI & ML</button>
+        <button class="pf-btn" data-filter="db">Data Analysis</button>
       </div>
     </div>
 
     <section class="proj-grid" id="projGrid">
 
-    <!--------------------------------------------------------------------------------------------------------->
+      <h2 class="proj-group">Computer Vision</h2>
 
-     <!-- Card — DETR Object Detector (live in-browser demo) -->
       <article class="proj-card" data-category="cv">
         <div class="pc-media">
           <a href="https://pritishk31-detr-object-detection.static.hf.space" target="_blank" rel="noopener">
@@ -76,9 +75,6 @@
         </div>
       </article>
 
-      <!--------------------------------------------------------------------------------------------------------->
-
-     <!-- Card 1 — Brain Tumor classification using Transformer -->
       <article class="proj-card" data-category="cv">
         <div class="pc-media">
           <img src="img/project7_brainTumor_transformer.png" alt="Portfolio Site" />
@@ -114,9 +110,6 @@
         </div>
       </article>
 
-      <!--------------------------------------------------------------------------------------------------------->
-
-     <!-- Car 2  — Nano VLM Project -->
       <article class="proj-card" data-category="cv">
         <div class="pc-media">
           <img src="img/project6_nanoVLM.png" alt="Portfolio Site" />
@@ -150,67 +143,6 @@
         </div>
       </article>
 
-      <!--------------------------------------------------------------------------------------------------------->
-
-      <!-- Card 3 — HR Data Analytics: Dashboard -->
-      <article class="proj-card" data-category="ai">
-        <div class="pc-media">
-          <img src="img/proj_HR_dash.png" width=10 height=10/>
-        </div>
-        <div class="pc-body">
-          <div class="pc-title-row">
-            <h3>Human Resource Data Analysis using PowerBI Dashboard</h3>
-          </div>
-          <p class="pc-desc">
-            This project aims to build PowerBI dashboard to visualize the Human Resource data. This will help the clients and key stakeholders to 
-            get quick insights and real time access to the information about the total employees, Next retrenchment, active workers and insights about employee data.
-          </p>
-          <div class="pc-chips">
-            <span class="pc-chip">PowerBI</span>
-            <span class="pc-chip">Exploratory Data Analysis</span>
-            <span class="pc-chip">Data Preprocessing</span>
-            <span class="pc-chip">Advance query</span>
-           
-          </div>
-          <div class="pc-actions">
-            <a class="pc-btn" href="https://github.com/pritish31/HumanResource_PowerBI/tree/main" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4 — Bank Customer Churn Prediction Analysis -->
-      <article class="proj-card" data-category="ai">
-        <div class="pc-media">
-          <img src="img/project1_ANN.png" alt="Bank Churn Project" />
-        </div>
-        <div class="pc-body">
-          <div class="pc-title-row">
-            <h3>Bank Customer Churn Prediction Analysis using Deep Learning</h3>
-            <!--<span class="pc-badge">Featured</span> -->
-          </div>
-          <p class="pc-desc">
-            The Bank Customer Churn Prediction project aims to identify customers likely to leave the bank, enabling proactive retention strategies. 
-            An Artificial Neural Network model was implemented using a Sequential neural network 
-            with two hidden layers to classify customers as "churning" or "non-churning.
-          </p>
-          <div class="pc-chips">
-            <span class="pc-chip">Python</span>
-            <span class="pc-chip">Numpy</span>
-            <span class="pc-chip">Pandas</span>
-            <span class="pc-chip">Scikit-Learn</span>
-            <span class="pc-chip">Neural Networks</span>
-            <span class="pc-chip">TensorFlow/Keras</span>
-          </div>
-          <div class="pc-actions">
-            <a class="pc-btn" href="https://github.com/pritish31/ANN-for-customer-churn" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!--------------------------------------------------------------------------------------------------------->
-
-     
-      <!-- Card 5 — Real Time Monitoring of Parking Spots using Computer Vision -->
       <article class="proj-card" data-category="cv">
         <div class="pc-media">
           <img src="img/proj_parking.png" alt="Portfolio Site" />
@@ -244,70 +176,6 @@
         </div>
       </article>
 
-             <!--------------------------------------------------------------------------------------------------------->
-      <!-- Card 6 — Telecom Customer Churn Analysis -->
-      <article class="proj-card" data-category="ai">
-        <div class="pc-media">
-          <img src="img/project_Telecom.png" style="width:250px; height:200px;margin-left: 60px;"/>
-        </div>
-        <div class="pc-body">
-          <div class="pc-title-row">
-            <h3>Telecom Customer Churn Analysis</h3>
-            <!--<span class="pc-badge">Research</span>-->
-          </div>
-          <p class="pc-desc">
-           Customer churn is a critical business problem in the telecommunications sector. This project aims to analyze customer behavior, identify patterns, and 
-           build predictive models to identify the customers who likely to churn.
-          </p>
-          <div class="pc-chips">
-            <span class="pc-chip">Python</span>
-            <span class="pc-chip">Numpy</span>
-            <span class="pc-chip">Pandas</span>
-            <span class="pc-chip">Scikit-Learn</span>
-            <span class="pc-chip">MatplotLib</span>
-            <span class="pc-chip">XGBoost</span>
-            <span class="pc-chip">SVM</span>
-            <span class="pc-chip">Random Forest</span>
-          </div>
-          <div class="pc-actions">
-            <a class="pc-btn" href="https://github.com/pritish31/Telecom-Customer-Churn-Analysis" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!--------------------------------------------------------------------------------------------------------->
-      <!-- Card 7 — Bangalore Home Price Prediction -->
-      <article class="proj-card" data-category="ai">
-        <div class="pc-media">
-          <img src="img/project2_price.png" alt="Retail Analytics" />
-        </div>
-        <div class="pc-body">
-          <div class="pc-title-row">
-            <h3>Bangalore Home Price Prediction</h3>
-          </div>
-          <p class="pc-desc">
-           This project predicts property prices in Bangalore using
-                    various features like location, total area (in square feet), number of bedrooms,
-                    bathrooms, etc. The solution involves data preprocessing, feature engineering,
-                    and training machine learning models, with a Flask-based API for serving predictions.
-          </p>
-          <div class="pc-chips">
-            <span class="pc-chip">Python</span>
-            <span class="pc-chip"> Numpy</span>
-            <span class="pc-chip">Data preprocessing</span>
-            <span class="pc-chip">Linear Regression</span>
-            <span class="pc-chip">Feature Engineering</span>
-            <span class="pc-chip">Cross Validation</span>
-     
-          </div>
-          <div class="pc-actions">
-            <a class="pc-btn" href="https://github.com/pritish31/Bangalore-House-Price-Prediction" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <!--------------------------------------------------------------------------------------------------------->
-      <!-- Card 8 — Facial Emotion Recognition using Deep Learning -->
       <article class="proj-card" data-category="cv">
         <div class="pc-media">
           <img src="img/project5_emotion.png" style="width:250px; height:200px;margin-left: 60px;"/>
@@ -337,39 +205,124 @@
         </div>
       </article>
 
-      <!--------------------------------------------------------------------------------------------------------->
-      <!-- Card 9 — Crime in the city -->
-      <article class="proj-card" data-category="db">
+
+      <h2 class="proj-group">AI &amp; ML</h2>
+
+      <article class="proj-card" data-category="ai">
         <div class="pc-media">
-          <img src="img/proj_crime.png" />
+          <img src="img/project1_ANN.png" alt="Bank Churn Project" />
         </div>
         <div class="pc-body">
           <div class="pc-title-row">
-            <h3>Buffalo City Crime Analysis</h3>
+            <h3>Bank Customer Churn Prediction Analysis using Deep Learning</h3>
+            <!--<span class="pc-badge">Featured</span> -->
           </div>
           <p class="pc-desc">
-            This project contains a database of crimes in Buffalo, NY, spanning from 2020 to 2021. The goal is to enable detailed analysis of crime patterns in the city, allowing 
-            law enforcement agencies and other stakeholders to use a web-based system for accessing and analyzing crime data.
+            The Bank Customer Churn Prediction project aims to identify customers likely to leave the bank, enabling proactive retention strategies. 
+            An Artificial Neural Network model was implemented using a Sequential neural network 
+            with two hidden layers to classify customers as "churning" or "non-churning.
           </p>
           <div class="pc-chips">
-            <span class="pc-chip">SQL</span>
             <span class="pc-chip">Python</span>
-            <span class="pc-chip">MySQL Workbench</span>
-            <span class="pc-chip">Streamlit</span>
-            <span class="pc-chip">Data preprocessing</span>
-            <span class="pc-chip">Window Funtions</span>
-            <span class="pc-chip">Complex queries</span>
-     
+            <span class="pc-chip">Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">Scikit-Learn</span>
+            <span class="pc-chip">Neural Networks</span>
+            <span class="pc-chip">TensorFlow/Keras</span>
           </div>
           <div class="pc-actions">
-            <a class="pc-btn" href="https://github.com/pritish31/Crime_in_the_city" target="_blank" rel="noopener">GitHub</a>
+            <a class="pc-btn" href="https://github.com/pritish31/ANN-for-customer-churn" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
 
-      <!--------------------------------------------------------------------------------------------------------->
-      <!-- Card 10 — HR Data Analytics: Employee Attrition Prediction -->
       <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/project_Telecom.png" style="width:250px; height:200px;margin-left: 60px;"/>
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Telecom Customer Churn Analysis</h3>
+            <!--<span class="pc-badge">Research</span>-->
+          </div>
+          <p class="pc-desc">
+           Customer churn is a critical business problem in the telecommunications sector. This project aims to analyze customer behavior, identify patterns, and 
+           build predictive models to identify the customers who likely to churn.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip">Numpy</span>
+            <span class="pc-chip">Pandas</span>
+            <span class="pc-chip">Scikit-Learn</span>
+            <span class="pc-chip">MatplotLib</span>
+            <span class="pc-chip">XGBoost</span>
+            <span class="pc-chip">SVM</span>
+            <span class="pc-chip">Random Forest</span>
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Telecom-Customer-Churn-Analysis" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-category="ai">
+        <div class="pc-media">
+          <img src="img/project2_price.png" alt="Retail Analytics" />
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Bangalore Home Price Prediction</h3>
+          </div>
+          <p class="pc-desc">
+           This project predicts property prices in Bangalore using
+                    various features like location, total area (in square feet), number of bedrooms,
+                    bathrooms, etc. The solution involves data preprocessing, feature engineering,
+                    and training machine learning models, with a Flask-based API for serving predictions.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip"> Numpy</span>
+            <span class="pc-chip">Data preprocessing</span>
+            <span class="pc-chip">Linear Regression</span>
+            <span class="pc-chip">Feature Engineering</span>
+            <span class="pc-chip">Cross Validation</span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Bangalore-House-Price-Prediction" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+
+      <h2 class="proj-group">Data Analysis</h2>
+
+      <article class="proj-card" data-category="db">
+        <div class="pc-media">
+          <img src="img/proj_HR_dash.png" width=10 height=10/>
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Human Resource Data Analysis using PowerBI Dashboard</h3>
+          </div>
+          <p class="pc-desc">
+            This project aims to build PowerBI dashboard to visualize the Human Resource data. This will help the clients and key stakeholders to 
+            get quick insights and real time access to the information about the total employees, Next retrenchment, active workers and insights about employee data.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">PowerBI</span>
+            <span class="pc-chip">Exploratory Data Analysis</span>
+            <span class="pc-chip">Data Preprocessing</span>
+            <span class="pc-chip">Advance query</span>
+           
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/HumanResource_PowerBI/tree/main" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-category="db">
         <div class="pc-media">
           <img src="img/proj_HR_analytics.png" width=10 height=10/>
         </div>
@@ -402,6 +355,34 @@
         </div>
       </article>
 
+      <article class="proj-card" data-category="db">
+        <div class="pc-media">
+          <img src="img/proj_crime.png" />
+        </div>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3>Buffalo City Crime Analysis</h3>
+          </div>
+          <p class="pc-desc">
+            This project contains a database of crimes in Buffalo, NY, spanning from 2020 to 2021. The goal is to enable detailed analysis of crime patterns in the city, allowing 
+            law enforcement agencies and other stakeholders to use a web-based system for accessing and analyzing crime data.
+          </p>
+          <div class="pc-chips">
+            <span class="pc-chip">SQL</span>
+            <span class="pc-chip">Python</span>
+            <span class="pc-chip">MySQL Workbench</span>
+            <span class="pc-chip">Streamlit</span>
+            <span class="pc-chip">Data preprocessing</span>
+            <span class="pc-chip">Window Funtions</span>
+            <span class="pc-chip">Complex queries</span>
+     
+          </div>
+          <div class="pc-actions">
+            <a class="pc-btn" href="https://github.com/pritish31/Crime_in_the_city" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
     </section>
   </main>
 
@@ -417,6 +398,10 @@
         cards.forEach(c=>{
           const cat = c.dataset.category;
           c.style.display = (f==='all' || f===cat) ? '' : 'none';
+        });
+        // group headings only make sense in the "All" view
+        document.querySelectorAll('.proj-group').forEach(h=>{
+          h.style.display = (f==='all') ? '' : 'none';
         });
       });
     });

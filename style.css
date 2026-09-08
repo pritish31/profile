@@ -307,6 +307,20 @@ body {
 @media (min-width:700px){ .proj-card{ grid-column:span 6 } }
 @media (min-width:1024px){ .proj-card{ grid-column:span 4 } }
 
+/* Section headings inside the grid (CV / AI & ML / Data Analysis) */
+.proj-group{
+  grid-column:1 / -1;
+  margin:18px 0 -8px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#6b7280;
+  border-bottom:1px solid #e6e8ef;
+  padding-bottom:10px;
+}
+.proj-group:first-child{ margin-top:0; }
+
 /* Card */
 .pc-media{
   aspect-ratio:16/9;
